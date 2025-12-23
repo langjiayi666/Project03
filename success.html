@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>订单成功 - 小兔鲜儿</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/success.css">
+</head>
+<body>
+    <!-- 快捷导航栏 -->
+    <div class="bar">
+        <div class="wrapper">
+            <ul>
+                <li><a href="#">25计科专升本2班 浪佳怡 25216950207</a></li>
+                <li><a href="index.html">返回首页</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 头部 -->
+    <div class="header wrapper">
+        <div class="logo">
+            <h1><a href="index.html">小兔鲜儿</a></h1>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="#">生鲜</a></li>
+                <li><a href="#">美食</a></li>
+            </ul>
+        </div>
+        <a href="cart.html" class="car">
+            <span>0</span>
+        </a>
+    </div>
+
+    <!-- 订单成功区域 -->
+    <div class="success-container">
+        <div class="wrapper">
+            <div class="success-content">
+                <div class="success-icon">✓</div>
+                <h2>订单支付成功！</h2>
+                <div class="order-info">
+                    <p>订单号：<span id="orderNumber">DD202312341234</span></p>
+                    <p>支付金额：<span id="paidAmount">¥0.00</span></p>
+                    <p>支付时间：<span id="paymentTime">2023-12-20 14:30:25</span></p>
+                    <p>预计发货：24小时内</p>
+                </div>
+                
+                <div class="action-buttons">
+                    <a href="index.html" class="btn btn-home">继续购物</a>
+                    <a href="#" class="btn btn-order">查看订单</a>
+                </div>
+                
+                <div class="tips">
+                    <h3>温馨提示：</h3>
+                    <ul>
+                        <li>订单已进入配货流程，请耐心等待</li>
+                        <li>您可以在"我的订单"中查看订单详情</li>
+                        <li>如有问题请联系客服：400-123-4567</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer">
+        <div class="wrapper">
+            <div class="top">
+                <ul>
+                    <li><span>价格亲民</span></li>
+                    <li><span>品质新鲜</span></li>
+                    <li><span>物流快捷</span></li>
+                </ul>
+            </div>
+            <div class="bottom">
+                <p>
+                    <a href="#">关于我们</a>|
+                    <a href="#">帮助中心</a>|
+                    <a href="#">售后服务</a>|
+                    <a href="#">配送与验收</a>|
+                    <a href="#">商务合作</a>|
+                    <a href="#">搜索推荐</a>|
+                    <a href="#">友情链接</a>
+                </p>
+                <p>CopyRight @ 小兔鲜儿</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 页面加载时显示订单信息
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const orderNumber = urlParams.get('order') || 'DD' + Date.now();
+            const totalAmount = localStorage.getItem('lastOrderAmount') || '0.00';
+            
+            document.getElementById('orderNumber').textContent = orderNumber;
+            document.getElementById('paidAmount').textContent = '¥' + totalAmount;
+            document.getElementById('paymentTime').textContent = new Date().toLocaleString();
+            
+            // 清空购物车
+            localStorage.removeItem('cartItems');
+            localStorage.removeItem('cartForOrder');
+            localStorage.removeItem('orderTotal');
+        };
+    </script>
+</body>
+</html>

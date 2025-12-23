@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>结算 - 小兔鲜儿</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/checkout.css">
+</head>
+<body>
+    <!-- 快捷导航栏 -->
+    <div class="bar">
+        <div class="wrapper">
+            <ul>
+                <li><a href="#">25计科专升本2班 浪佳怡 25216950207</a></li>
+                <li><a href="index.html">返回首页</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 头部 -->
+    <div class="header wrapper">
+        <div class="logo">
+            <h1><a href="index.html">小兔鲜儿</a></h1>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="#">生鲜</a></li>
+                <li><a href="#">美食</a></li>
+            </ul>
+        </div>
+        <a href="cart.html" class="car">
+            <span>0</span>
+        </a>
+    </div>
+
+    <!-- 结算区域 -->
+    <div class="checkout-container">
+        <div class="wrapper">
+            <div class="checkout-title">
+                <span class="step active">1. 确认订单</span>
+                <span class="step-arrow">›</span>
+                <span class="step active">2. 支付</span>
+                <span class="step-arrow">›</span>
+                <span class="step">3. 完成</span>
+            </div>
+            
+            <!-- 订单信息 -->
+            <div class="checkout-section">
+                <h3>订单信息</h3>
+                <div id="orderSummary">
+                    <!-- 订单信息会动态显示 -->
+                </div>
+            </div>
+            
+            <!-- 收货地址 -->
+            <div class="checkout-section">
+                <h3>收货地址</h3>
+                <div class="address-info">
+                    <div class="address-detail">
+                        <span id="addressReceiver">浪佳怡</span>
+                        <span id="addressPhone">25216950207</span>
+                    </div>
+                    <div id="addressText">广东省佛山市南海区狮山镇广东东软学院</div>
+                </div>
+            </div>
+            
+            <!-- 支付方式 -->
+            <div class="checkout-section">
+                <h3>支付方式</h3>
+                <div class="payment-options">
+                    <div class="payment-option active" onclick="selectPayment('alipay')">
+                        <div class="payment-icon">💳</div>
+                        <div class="payment-name">支付宝支付</div>
+                        <div class="payment-selected">✓</div>
+                    </div>
+                    <div class="payment-option" onclick="selectPayment('wechat')">
+                        <div class="payment-icon">💰</div>
+                        <div class="payment-name">微信支付</div>
+                        <div class="payment-selected">✓</div>
+                    </div>
+                    <div class="payment-option" onclick="selectPayment('bank')">
+                        <div class="payment-icon">🏦</div>
+                        <div class="payment-name">银行卡支付</div>
+                        <div class="payment-selected">✓</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 支付金额 -->
+            <div class="checkout-section">
+                <h3>支付金额</h3>
+                <div class="price-details">
+                    <div class="price-row">
+                        <span>商品金额</span>
+                        <span>¥<span id="goodsAmount">0.00</span></span>
+                    </div>
+                    <div class="price-row">
+                        <span>运费</span>
+                        <span>¥<span id="shippingFee">0.00</span></span>
+                    </div>
+                    <div class="price-row">
+                        <span>优惠</span>
+                        <span>-¥<span id="discount">0.00</span></span>
+                    </div>
+                    <div class="price-total">
+                        <span>实付金额</span>
+                        <span class="total-amount">¥<span id="totalAmount">0.00</span></span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 支付按钮 -->
+            <div class="payment-section">
+                <div class="agreement">
+                    <input type="checkbox" id="agree" checked>
+                    <label for="agree">我已阅读并同意《小兔鲜儿服务协议》</label>
+                </div>
+                <button class="pay-btn" onclick="payNow()">立即支付</button>
+                <div class="payment-tips">
+                    <p>支付提示：请在15分钟内完成支付，超时订单将自动取消</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer">
+        <div class="wrapper">
+            <div class="top">
+                <ul>
+                    <li><span>价格亲民</span></li>
+                    <li><span>品质新鲜</span></li>
+                    <li><span>物流快捷</span></li>
+                </ul>
+            </div>
+            <div class="bottom">
+                <p>
+                    <a href="#">关于我们</a>|
+                    <a href="#">帮助中心</a>|
+                    <a href="#">售后服务</a>|
+                    <a href="#">配送与验收</a>|
+                    <a href="#">商务合作</a>|
+                    <a href="#">搜索推荐</a>|
+                    <a href="#">友情链接</a>
+                </p>
+                <p>CopyRight @ 小兔鲜儿</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 支付成功弹窗 -->
+    <div class="modal-overlay" id="paymentModal" style="display: none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>支付成功</h3>
+                <span class="close-btn" onclick="closeModal()">×</span>
+            </div>
+            <div class="modal-body">
+                <div class="success-icon">✓</div>
+                <p class="success-text">支付成功！</p>
+                <p>订单号：<span id="orderNumber">DD202312341234</span></p>
+                <p>支付金额：<span id="paidAmount">¥0.00</span></p>
+                <p>预计24小时内发货</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-secondary" onclick="viewOrder()">查看订单</button>
+                <button class="btn-primary" onclick="goHome()">返回首页</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let selectedPayment = 'alipay';
+        let orderData = {};
+        
+        // 页面加载时加载订单数据
+        window.onload = function() {
+            loadOrderData();
+            renderOrderSummary();
+        };
+        
+        // 加载订单数据
+        function loadOrderData() {
+            // 从localStorage获取订单数据
+            const savedCart = localStorage.getItem('cartForOrder');
+            const savedTotal = localStorage.getItem('orderTotal');
+            
+            if (savedCart) {
+                orderData.items = JSON.parse(savedCart);
+            }
+            
+            if (savedTotal) {
+                const goodsAmount = parseFloat(savedTotal);
+                orderData.goodsAmount = goodsAmount;
+                
+                // 计算运费和优惠
+                let shippingFee = 0;
+                let discount = 0;
+                
+                if (goodsAmount < 99) {
+                    shippingFee = 10;
+                }
+                
+                if (goodsAmount >= 199) {
+                    discount = 20;
+                }
+                
+                orderData.shippingFee = shippingFee;
+                orderData.discount = discount;
+                orderData.totalAmount = goodsAmount + shippingFee - discount;
+                
+                // 更新页面显示
+                document.getElementById('goodsAmount').textContent = goodsAmount.toFixed(2);
+                document.getElementById('shippingFee').textContent = shippingFee.toFixed(2);
+                document.getElementById('discount').textContent = discount.toFixed(2);
+                document.getElementById('totalAmount').textContent = orderData.totalAmount.toFixed(2);
+            }
+            
+            // 生成订单号
+            orderData.orderNumber = 'DD' + Date.now() + Math.floor(Math.random() * 1000);
+        }
+        
+        // 渲染订单摘要
+        function renderOrderSummary() {
+            const orderSummary = document.getElementById('orderSummary');
+            
+            if (!orderData.items || orderData.items.length === 0) {
+                orderSummary.innerHTML = '<p>暂无商品信息</p>';
+                return;
+            }
+            
+            let html = '';
+            orderData.items.forEach(item => {
+                const itemTotal = item.price * item.quantity;
+                html += `
+                <div class="order-item">
+                    <div class="item-name">${item.name}</div>
+                    <div class="item-quantity">×${item.quantity}</div>
+                    <div class="item-price">¥${itemTotal.toFixed(2)}</div>
+                </div>
+                `;
+            });
+            
+            orderSummary.innerHTML = html;
+        }
+        
+        // 选择支付方式
+        function selectPayment(payment) {
+            selectedPayment = payment;
+            
+            // 更新UI
+            document.querySelectorAll('.payment-option').forEach(option => {
+                option.classList.remove('active');
+            });
+            event.target.closest('.payment-option').classList.add('active');
+        }
+        
+        // 立即支付
+function payNow() {
+    const agree = document.getElementById('agree').checked;
+    
+    if (!agree) {
+        alert('请先同意服务协议');
+        return;
+    }
+    
+    // 显示支付成功弹窗
+    document.getElementById('paidAmount').textContent = '¥' + orderData.totalAmount.toFixed(2);
+    document.getElementById('orderNumber').textContent = orderData.orderNumber;
+    document.getElementById('paymentModal').style.display = 'block';
+    
+    // 清空购物车
+    localStorage.removeItem('cartItems');
+    localStorage.removeItem('cartForOrder');
+    localStorage.removeItem('orderTotal');
+    
+    // 保存订单记录
+    const orders = JSON.parse(localStorage.getItem('userOrders') || '[]');
+    const newOrder = {
+        orderNumber: orderData.orderNumber,
+        orderTime: new Date().toLocaleString(),
+        totalAmount: orderData.totalAmount,
+        items: orderData.items,
+        paymentMethod: selectedPayment,
+        status: '已支付'
+    };
+    orders.push(newOrder);
+    localStorage.setItem('userOrders', JSON.stringify(orders));
+    
+    // 保存订单金额供 success.html 使用
+    localStorage.setItem('lastOrderAmount', orderData.totalAmount.toFixed(2));
+    
+    // 3秒后自动跳转到成功页面
+    setTimeout(() => {
+        window.location.href = `success.html?order=${orderData.orderNumber}`;
+    }, 3000);
+}
+        
+        // 关闭弹窗
+        function closeModal() {
+            document.getElementById('paymentModal').style.display = 'none';
+        }
+        
+        // 查看订单
+        function viewOrder() {
+            closeModal();
+            alert('订单详情功能待开发');
+            // window.location.href = 'order-detail.html?order=' + orderData.orderNumber;
+        }
+        
+        // 返回首页
+        function goHome() {
+            closeModal();
+            window.location.href = 'index.html';
+        }
+    </script>
+</body>
+</html>

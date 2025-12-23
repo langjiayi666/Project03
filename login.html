@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录/注册 - 小兔鲜儿</title>
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
+</head>
+<body>
+    <!-- 快捷导航 -->
+    <div class="bar">
+        <div class="wrapper">
+            <ul>
+                <li><a href="#">25计科专升本2班 浪佳怡 25216950207</a></li>
+                <li><a href="index.html">返回首页</a></li>
+                <li><a href="login.html">请先登录</a></li>
+                <li><a href="login.html">免费注册</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 头部 -->
+    <div class="header wrapper">
+        <div class="logo">
+            <h1><a href="index.html">小兔鲜儿</a></h1>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a href="index.html">首页</a></li>
+                <li><a href="#">生鲜</a></li>
+                <li><a href="#">美食</a></li>
+                <li><a href="#">餐厨</a></li>
+            </ul>
+        </div>
+        <a href="cart.html" class="car">
+            <span>2</span>
+        </a>
+    </div>
+
+    <!-- 登录注册区域 -->
+    <div class="login-container">
+        <div class="wrapper">
+            <div class="login-box">
+                <div class="login-title">欢迎来到小兔鲜儿</div>
+                
+                <!-- 切换标签 -->
+                <div class="login-tab">
+                    <div class="tab-item active" onclick="showTab('login')">登录</div>
+                    <div class="tab-item" onclick="showTab('register')">注册</div>
+                </div>
+                
+                <!-- 登录表单 -->
+                <div id="loginForm" class="form-section active">
+                    <form class="login-form" onsubmit="return loginSubmit(event)">
+                        <input type="text" placeholder="用户名/手机号/邮箱" required>
+                        <input type="password" placeholder="密码" required>
+                        <button type="submit" class="login-btn">立即登录</button>
+                    </form>
+                    <p style="text-align: center; margin-top: 15px;">
+                        <a href="#" style="color: #666;">忘记密码？</a>
+                    </p>
+                </div>
+                
+                <!-- 注册表单 -->
+                <div id="registerForm" class="form-section">
+                    <form class="login-form" onsubmit="return registerSubmit(event)">
+                        <input type="text" placeholder="用户名" required>
+                        <input type="tel" placeholder="手机号" required>
+                        <input type="password" placeholder="密码（至少6位）" required minlength="6">
+                        <input type="password" placeholder="确认密码" required>
+                        <button type="submit" class="login-btn">立即注册</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部 -->
+    <div class="footer">
+        <div class="wrapper">
+            <div class="top">
+                <ul>
+                    <li><span>价格亲民</span></li>
+                    <li><span>品质新鲜</span></li>
+                    <li><span>物流快捷</span></li>
+                </ul>
+            </div>
+            <div class="bottom">
+                <p>
+                    <a href="#">关于我们</a>|
+                    <a href="#">帮助中心</a>|
+                    <a href="#">售后服务</a>|
+                    <a href="#">配送与验收</a>|
+                    <a href="#">商务合作</a>|
+                    <a href="#">搜索推荐</a>|
+                    <a href="#">友情链接</a>
+                </p>
+                <p>CopyRight @ 小兔鲜儿</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 切换登录/注册标签
+        function showTab(tabName) {
+            // 切换标签样式
+            document.querySelectorAll('.tab-item').forEach(item => {
+                item.classList.remove('active');
+            });
+            event.target.classList.add('active');
+            
+            // 切换表单显示
+            document.getElementById('loginForm').classList.remove('active');
+            document.getElementById('registerForm').classList.remove('active');
+            document.getElementById(tabName + 'Form').classList.add('active');
+        }
+        
+        // 登录提交
+        function loginSubmit(event) {
+            event.preventDefault();
+            alert('登录功能演示（实际需要连接后端）');
+            // 这里可以跳转到首页
+            // window.location.href = 'index.html';
+            return false;
+        }
+        
+        // 注册提交
+        function registerSubmit(event) {
+            event.preventDefault();
+            const password = event.target.querySelector('input[type="password"]').value;
+            const confirmPassword = event.target.querySelectorAll('input[type="password"]')[1].value;
+            
+            if (password !== confirmPassword) {
+                alert('两次输入的密码不一致！');
+                return false;
+            }
+            
+            alert('注册功能演示（实际需要连接后端）');
+            // 注册成功后可以自动切换到登录标签
+            showTab('login');
+            return false;
+        }
+    </script>
+</body>
+</html>
