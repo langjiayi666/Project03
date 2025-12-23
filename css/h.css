@@ -1,0 +1,507 @@
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+}
+body{
+    font: 16px/1.5  "Helvetica Neue","Microsoft Yahei","Arial","Helvetica"
+    "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+    color: #333;
+}
+ul,ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #333;
+}
+.clearflex{
+    clear: both;
+    display: table;
+}
+
+img{
+    vertical-align: middle;
+}
+.wrapper{
+    width: 1240px;
+    margin: 0 auto;
+}
+.bar{
+    height: 52px;
+    background-color: #333
+}
+.bar .wrapper{
+    height: 52px;
+}
+.bar .wrapper ul{
+    float: right;
+}
+.bar .wrapper li{
+    float: left;
+    line-height: 52px;
+}
+.bar .wrapper a{
+    padding: 0 16px;
+    border-right:1px solid #666;
+    font-size: 14px;
+    color: #dcdcdc;
+}
+.bar .wrapper a span{
+    display: inline-block;
+    width: 11px;
+    height: 16px;
+    background-image: url(../images/精灵图.PNG);
+    background-position: -160px -70px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+/* 头部 */
+.header{
+    margin: 30px auto;
+    height: 70px;
+}
+.logo{
+    float: left;
+    width: 207px;
+    height: 70px;
+}
+.logo h1{
+    width: 207px;
+    height: 70px;
+}
+.logo h1 a{
+    display: block;
+    width: 207px;
+    height: 70px;
+    background-image:url(../images/LOGO.PNG) ;
+    background-size: contain;
+    font-size: 0;
+}
+
+.nav{
+    margin-left: 40px;
+    float: left;
+    height: 70px;
+}
+
+.nav li{
+    float: left;
+    margin-right: 48px;
+    line-height: 70px;
+}
+
+.nav li a{
+    padding-bottom: 7px;
+}
+
+.nav li a:hover{
+    color: #27ba9b;
+    border-bottom: 1px solid #27ba9b;
+}
+
+.serach{
+    position: relative;
+    margin-left: 34px;
+    width: 172px;
+    height: 30px;
+    float: left;
+    margin-top: 24px;
+    float: left;
+    border-bottom: 2px solid #e7e7e7;
+}
+
+.serach input{
+    padding-left: 30px;
+    width: 172px;
+    height: 28px;
+}
+
+.serach input ::placeholder{
+    font-size: 14px;
+    color: #ccc;
+}
+
+.serach span{
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    background-image: url(../images/精灵图.PNG);
+    background-position:-79px -69px;
+}
+
+.banner{
+    height: 500px;
+    background-color: #f5f5f5;
+}
+
+.banner .wrapper{
+    height: 500px;
+}
+
+.subnav{
+    float: left;
+    width: 250px;
+     background-color: rgba(0, 0, 0,0.6);
+}
+
+.subnav a{
+    margin-right: 5px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.subnav li{
+    display: flex;
+    height: 50px;
+    padding: 14px 12px 14px 29px;
+    position: relative;
+}
+
+.subnav h4{
+    font-weight: 500px;
+    font-size: 16px;
+    margin-right: 14px;
+}
+
+.subnav span{
+  position: absolute;
+    left: 232px;
+    top: 15px;
+    width: 6px;
+    height: 20px;
+    background-image: url(../images/精灵图.PNG);
+    background-position:-41px -106px;
+}
+
+.pic-s{
+    position: relative;
+    width: 990px;
+}
+
+.pic{
+    width: 990px;
+    vertical-align: middle;
+}
+
+.pic-s ol{
+    display: flex;
+    position: absolute;
+    bottom: -250px;
+    right: 0;
+}
+
+.pic-s ol li{
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    margin-right: 8px;
+    margin-bottom: 16px;
+    position:relative;
+}
+
+.pic-s i{
+    display: block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.active{
+    background-color:rgba(255, 255, 255, 0.5);
+}
+
+.goods .hd{
+    height: 114px;
+    line-height: 114px;
+}
+
+.goods .hd h2{
+    height: 114px;
+    float: left;
+    font-size: 29px;
+    font-weight: 400;
+}
+
+.goods .hd h2 span{
+    margin-left: 34px;
+    font-size: 16px;
+    color: #999;
+}
+
+.goods .hd a,.shengxian .hd .more{
+    float: right;
+    color: #999;
+}
+
+.goods .hd a::after,.shengxian .hd .more::after{
+    content: '';
+    display: inline-block;
+    margin-left: 13px;
+    width: 7px;
+    height: 13px;
+    background-image: url(../images/精灵图.PNG);
+    background-position: 0 -110px;
+    vertical-align: middle;
+}
+
+.goods .bd li{
+    text-align: center;
+    float: left;
+    width: 304px;
+    height:405px;
+    margin-right: 8px;
+    background-color: #f0f9f4;
+}
+
+.goods .bd li:last-child{
+    margin-right: 0;
+}
+
+.goods .bd li img{
+    width: 304px;
+}
+
+.goods .bd li h3{
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.goods .bd li div{
+    color: #9a2e1f;
+    font-size: 17px;
+}
+
+.goods2{
+    margin-top: 100px;
+    height: 468px;
+    background-color: #f1f1f1;
+}
+
+.hot ul,.right ul{
+    display: flex;
+    justify-content: space-between;
+}
+
+.hot li{
+    margin-right: 5px;
+}
+
+.hot li:last-child{
+    margin-right: 0;
+}
+
+.shengxian .hd{
+    height: 96px;
+    line-height: 96px;
+}
+
+.shengxian .hd h2{
+    float: left;
+    font-size: 29px;
+    font-weight: 400;
+}
+
+.shengxian .hd .more{
+    float: right;
+}
+
+.shengxian .hd ul{
+    float: right;
+    margin-right: 65px;
+}
+
+.shengxian .hd ul li{
+    float: left;
+}
+
+.shengxian .hd li a{
+    padding: 0 7px;
+    margin-left: 6px;
+}
+
+.shengxian .hd li a:hover{
+    background-color: #27ba9b;
+    color: #fff;
+}
+
+.shengxian .bd .left{
+    float: left;
+    width: 240px;
+    height: 610px;
+}
+
+
+.shengxian .bd .right{
+    float: left;
+    width: 1000px;
+    height: 610px;
+}
+
+.shengxian .right img{
+    width: 190px;
+    height: 171px;
+    margin: 15px 0;
+}
+
+.shengxian .right span{
+    font-size: 22px;
+    line-height: 45px;
+    color: #AF2F22;
+}
+
+.shengxian .bd .right ul{
+    flex-wrap: wrap;
+}
+
+.shengxian .bd .right li{
+    width: 242px;
+    height: 305px;
+    padding: 0 26px;
+}
+
+.topic ul{
+    height: 395px;
+    display: flex;
+}
+
+.topic li img{
+    display: block;
+    margin-bottom: 23px;
+}
+
+.topic .love{
+    float: left;
+    display: block;
+    margin-left: 10px;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/精灵图.PNG);
+    background-position:-240px -106px;
+}
+
+.topic .see{
+    margin-left: 20px;
+    float: left;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/精灵图.PNG);
+    background-position:-155px -106px;
+}
+
+.topic .say{
+     margin-left: 190px;
+    float: left;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background-image: url(../images/精灵图.PNG);
+    background-position:-200px -106px;
+}
+
+.car{
+    position: relative;
+    float: left;
+    margin-left: 15px;
+    margin-top: 28px;
+    width: 23px;
+    height: 23px;
+    background-image: url(../images/精灵图.PNG);
+    background-position:-119px -69px;
+}
+
+.car span{
+    position: absolute;
+    right: -13px;
+    top: -6px;
+    width: 20px;
+    height: 15px;
+    background-color: #e26237;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+    line-height: 15px;
+}
+
+.footer{
+    height: 342px;
+    background-color: #333;
+}
+
+.footer .wrapper{
+    width: 1393px;
+}
+
+.footer .top{
+    padding-top: 59px;
+    padding-left: 135px;
+    height: 175px;
+    border-bottom: 1px solid #434343;
+}
+
+.footer .top li{
+    position: relative;
+    float: left;
+    margin-right: 300px;
+    width: 195px;
+    height: 58px;
+    line-height: 58px;
+}
+
+.footer .top li:last-child{
+    margin-right: 0;
+}
+
+.footer .top li::before{
+    position: absolute;
+    left: 0;
+    top: 0;
+    vertical-align: middle;
+    content: '';
+    width: 58px;
+    height: 58px;
+    background-image: url(../images/精灵图.PNG);
+}
+
+.footer .top li span{
+    margin-left: 77px;
+    font-size: 28px;
+    color: #fff;
+}
+
+.footer .top li:nth-child(2)::before{
+  background-position: -130px 0;
+}
+
+.footer .top li:nth-child(3)::before{
+  background-position: -64px 0;
+}
+
+.footer .bottom{
+    padding-top: 40px;
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+}
+
+.footer .bottom a{
+    margin-right: 5px;
+    font-size: 14px;
+    color: #999;
+}
+
+.footer .bottom p{
+    margin-bottom: 20px;
+}

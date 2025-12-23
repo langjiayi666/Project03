@@ -1,0 +1,141 @@
+/* cart.css - 购物车页面特有样式 */
+.cart-container {
+    min-height: 500px;
+    padding: 30px 0;
+    background-color: #f5f5f5;
+}
+
+.cart-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+    color: #333;
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border-bottom: 1px solid #eee;
+    background: white;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: box-shadow 0.3s;
+}
+
+.cart-item:hover {
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.cart-item img {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-name {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.cart-item-price {
+    color: #e26237;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.cart-item-quantity {
+    display: flex;
+    align-items: center;
+    margin: 0 20px;
+}
+
+.quantity-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ddd;
+    background: #f5f5f5;
+    cursor: pointer;
+    font-size: 16px;
+    color: #666;
+}
+
+.quantity-btn:hover {
+    background: #eee;
+}
+
+.quantity-input {
+    width: 40px;
+    height: 30px;
+    border: 1px solid #ddd;
+    text-align: center;
+    margin: 0 5px;
+    font-size: 14px;
+}
+
+.cart-item-total {
+    color: #e26237;
+    font-size: 20px;
+    font-weight: bold;
+    width: 100px;
+    text-align: right;
+}
+
+.cart-summary {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: right;
+}
+
+.total-price {
+    font-size: 24px;
+    color: #e26237;
+    margin: 10px 0;
+}
+
+.checkout-btn {
+    background: #27ba9b;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.checkout-btn:hover {
+    background: #1fa386;
+}
+
+.empty-cart {
+    text-align: center;
+    padding: 100px 0;
+    color: #666;
+    background: white;
+    border-radius: 5px;
+}
+
+.empty-cart h3 {
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.delete-btn {
+    color: #999;
+    cursor: pointer;
+    margin-left: 20px;
+    font-size: 14px;
+}
+
+.delete-btn:hover {
+    color: #ff3333;
+}

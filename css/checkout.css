@@ -1,0 +1,311 @@
+/* checkout.css - 结算页面特有样式 */
+.checkout-container {
+    min-height: 500px;
+    padding: 30px 0;
+    background-color: #f5f5f5;
+}
+
+.checkout-title {
+    font-size: 18px;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    color: #666;
+}
+
+.step {
+    padding: 8px 15px;
+    background: #ddd;
+    color: #666;
+    border-radius: 20px;
+    margin-right: 10px;
+}
+
+.step.active {
+    background: #27ba9b;
+    color: white;
+}
+
+.step-arrow {
+    margin-right: 10px;
+    color: #999;
+}
+
+.checkout-section {
+    background: white;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.checkout-section h3 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: #333;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.order-item:last-child {
+    border-bottom: none;
+}
+
+.item-name {
+    flex: 1;
+    color: #666;
+}
+
+.item-quantity {
+    width: 60px;
+    text-align: center;
+    color: #999;
+}
+
+.item-price {
+    width: 100px;
+    text-align: right;
+    color: #e26237;
+    font-weight: bold;
+}
+
+.address-info {
+    padding: 15px;
+    background: #f9f9f9;
+    border-radius: 5px;
+    border: 1px solid #eee;
+}
+
+.address-detail {
+    margin-bottom: 10px;
+}
+
+.address-detail span {
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.address-text {
+    color: #666;
+    line-height: 1.5;
+}
+
+.payment-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.payment-option:hover {
+    border-color: #27ba9b;
+    background: #f0f9f4;
+}
+
+.payment-option.active {
+    border-color: #27ba9b;
+    background: #f0f9f4;
+}
+
+.payment-icon {
+    font-size: 24px;
+    margin-right: 15px;
+    width: 40px;
+    text-align: center;
+}
+
+.payment-name {
+    flex: 1;
+    font-size: 16px;
+}
+
+.payment-selected {
+    color: #27ba9b;
+    font-size: 20px;
+    font-weight: bold;
+    display: none;
+}
+
+.payment-option.active .payment-selected {
+    display: block;
+}
+
+.price-details {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.price-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    color: #666;
+}
+
+.price-total {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #ddd;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.total-amount {
+    color: #e26237;
+    font-size: 24px;
+}
+
+.payment-section {
+    background: white;
+    padding: 30px;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.agreement {
+    margin-bottom: 20px;
+    text-align: left;
+    color: #666;
+}
+
+.agreement input {
+    margin-right: 10px;
+}
+
+.pay-btn {
+    background: #27ba9b;
+    color: white;
+    border: none;
+    padding: 15px 60px;
+    font-size: 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.pay-btn:hover {
+    background: #1fa386;
+}
+
+.payment-tips {
+    margin-top: 20px;
+    color: #999;
+    font-size: 14px;
+}
+
+/* 模态框样式 */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: white;
+    width: 400px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #f5f5f5;
+    border-bottom: 1px solid #eee;
+}
+
+.modal-header h3 {
+    margin: 0;
+    color: #333;
+}
+
+.close-btn {
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+}
+
+.modal-body {
+    padding: 30px;
+    text-align: center;
+}
+
+.success-icon {
+    font-size: 60px;
+    color: #27ba9b;
+    margin-bottom: 20px;
+}
+
+.success-text {
+    font-size: 24px;
+    color: #27ba9b;
+    margin-bottom: 20px;
+}
+
+.modal-body p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.modal-footer {
+    padding: 20px;
+    display: flex;
+    gap: 15px;
+    border-top: 1px solid #eee;
+}
+
+.btn-primary, .btn-secondary {
+    flex: 1;
+    padding: 12px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-primary {
+    background: #27ba9b;
+    color: white;
+    border: none;
+}
+
+.btn-secondary {
+    background: #f5f5f5;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.btn-primary:hover {
+    background: #1fa386;
+}
+
+.btn-secondary:hover {
+    background: #eee;
+}

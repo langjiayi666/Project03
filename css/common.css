@@ -1,0 +1,246 @@
+/* common.css - 登录、购物车、订单页面共用的公共样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font: 16px/1.5 "Helvetica Neue","Microsoft Yahei","Arial","Helvetica"
+    "Hiragino Sans GB", "Heiti SC", "WenQuanYi Micro Hei", sans-serif;
+    color: #333;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: #333;
+}
+
+.clearflex {
+    clear: both;
+    display: table;
+}
+
+img {
+    vertical-align: middle;
+}
+
+.wrapper {
+    width: 1240px;
+    margin: 0 auto;
+}
+
+.bar {
+    height: 52px;
+    background-color: #333;
+}
+
+.bar .wrapper {
+    height: 52px;
+}
+
+.bar .wrapper ul {
+    float: right;
+}
+
+.bar .wrapper li {
+    float: left;
+    line-height: 52px;
+}
+
+.bar .wrapper a {
+    padding: 0 16px;
+    border-right: 1px solid #666;
+    font-size: 14px;
+    color: #dcdcdc;
+}
+
+.bar .wrapper a span {
+    display: inline-block;
+    width: 11px;
+    height: 16px;
+    background-image: url(../images/精灵图.PNG);
+    background-position: -160px -70px;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* 头部样式 */
+.header {
+    margin: 30px auto;
+    height: 70px;
+}
+
+.logo {
+    float: left;
+    width: 207px;
+    height: 70px;
+}
+
+.logo h1 {
+    width: 207px;
+    height: 70px;
+}
+
+.logo h1 a {
+    display: block;
+    width: 207px;
+    height: 70px;
+    background-image: url(../images/LOGO.PNG);
+    background-size: contain;
+    font-size: 0;
+}
+
+.nav {
+    margin-left: 40px;
+    float: left;
+    height: 70px;
+}
+
+.nav li {
+    float: left;
+    margin-right: 48px;
+    line-height: 70px;
+}
+
+.nav li a {
+    padding-bottom: 7px;
+}
+
+.nav li a:hover {
+    color: #27ba9b;
+    border-bottom: 1px solid #27ba9b;
+}
+
+.serach {
+    position: relative;
+    margin-left: 34px;
+    width: 172px;
+    height: 30px;
+    float: left;
+    margin-top: 24px;
+    border-bottom: 2px solid #e7e7e7;
+}
+
+.serach input {
+    padding-left: 30px;
+    width: 172px;
+    height: 28px;
+}
+
+.serach input::placeholder {
+    font-size: 14px;
+    color: #ccc;
+}
+
+.serach span {
+    position: absolute;
+    left: 5px;
+    top: 5px;
+    width: 18px;
+    height: 18px;
+    background-image: url(../images/精灵图.PNG);
+    background-position: -79px -69px;
+}
+
+/* 购物车图标 */
+.car {
+    position: relative;
+    float: left;
+    margin-left: 15px;
+    margin-top: 28px;
+    width: 23px;
+    height: 23px;
+    background-image: url(../images/精灵图.PNG);
+    background-position: -119px -69px;
+}
+
+.car span {
+    position: absolute;
+    right: -13px;
+    top: -6px;
+    width: 20px;
+    height: 15px;
+    background-color: #e26237;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #fff;
+    text-align: center;
+    line-height: 15px;
+}
+
+/* 底部样式 */
+.footer {
+    height: 342px;
+    background-color: #333;
+}
+
+.footer .wrapper {
+    width: 1393px;
+}
+
+.footer .top {
+    padding-top: 59px;
+    padding-left: 135px;
+    height: 175px;
+    border-bottom: 1px solid #434343;
+}
+
+.footer .top li {
+    position: relative;
+    float: left;
+    margin-right: 300px;
+    width: 195px;
+    height: 58px;
+    line-height: 58px;
+}
+
+.footer .top li:last-child {
+    margin-right: 0;
+}
+
+.footer .top li::before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    vertical-align: middle;
+    content: '';
+    width: 58px;
+    height: 58px;
+    background-image: url(../images/精灵图.PNG);
+}
+
+.footer .top li span {
+    margin-left: 77px;
+    font-size: 28px;
+    color: #fff;
+}
+
+.footer .top li:nth-child(2)::before {
+    background-position: -130px 0;
+}
+
+.footer .top li:nth-child(3)::before {
+    background-position: -64px 0;
+}
+
+.footer .bottom {
+    padding-top: 40px;
+    font-size: 14px;
+    color: #999;
+    text-align: center;
+}
+
+.footer .bottom a {
+    margin-right: 5px;
+    font-size: 14px;
+    color: #999;
+}
+
+.footer .bottom p {
+    margin-bottom: 20px;
+}
